@@ -44,8 +44,7 @@ public class Crypting {
 				} else {
 					colSL++;
 				}
-				newText += codingTable[rowFL][colFL];
-				newText += codingTable[rowSL][colSL];
+				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else if (colFL == colSL) {
 				if (rowFL == 4) {
 					rowFL = 0;
@@ -57,11 +56,9 @@ public class Crypting {
 				} else {
 					rowSL++;
 				}
-				newText += codingTable[rowFL][colFL];
-				newText += codingTable[rowSL][colSL];
+				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else {
-				newText += codingTable[rowFL][colSL];
-				newText += codingTable[rowSL][colFL];
+				newText = addText(rowFL, colSL, rowSL, colFL, newText, codingTable);
 			}
 		}
 		return newText;
@@ -96,8 +93,7 @@ public class Crypting {
 				} else {
 					colSL--;
 				}
-				newText += codingTable[rowFL][colFL];
-				newText += codingTable[rowSL][colSL];
+				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else if (colFL == colSL) {
 				if (rowFL == 0) {
 					rowFL = 4;
@@ -109,17 +105,21 @@ public class Crypting {
 				} else {
 					rowSL--;
 				}
-				newText += codingTable[rowFL][colFL];
-				newText += codingTable[rowSL][colSL];
+				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else {
-				newText += codingTable[rowFL][colSL];
-				newText += codingTable[rowSL][colFL];
+				newText = addText(rowFL, colSL, rowSL, colFL, newText, codingTable);
 			}
 		}
 		newText = newText.toLowerCase();
 		// if (newText.charAt(newText.length() - 1) == 'p') {
 		// newText = newText.substring(0, newText.length() - 1);
 		// }
+		return newText;
+	}
+
+	static String addText(int f1, int f2, int s1, int s2, String newText, char[][] codingTable) {
+		newText += codingTable[f1][f2];
+		newText += codingTable[s1][s2];
 		return newText;
 	}
 }
