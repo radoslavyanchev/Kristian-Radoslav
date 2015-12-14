@@ -34,24 +34,24 @@ public class Crypting {
 				}
 			}
 			if (rowFL == rowSL) {
-				if (colFL == 4) {
+				if (colFL == codingTable.length - 1) {
 					colFL = 0;
 				} else {
 					colFL++;
 				}
-				if (colSL == 4) {
+				if (colSL == codingTable.length - 1) {
 					colSL = 0;
 				} else {
 					colSL++;
 				}
 				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else if (colFL == colSL) {
-				if (rowFL == 4) {
+				if (rowFL == codingTable.length - 1) {
 					rowFL = 0;
 				} else {
 					rowFL++;
 				}
-				if (rowSL == 4) {
+				if (rowSL == codingTable.length - 1) {
 					rowSL = 0;
 				} else {
 					rowSL++;
@@ -84,24 +84,24 @@ public class Crypting {
 			}
 			if (rowFL == rowSL) {
 				if (colFL == 0) {
-					colFL = 4;
+					colFL = codingTable.length - 1;
 				} else {
 					colFL--;
 				}
 				if (colSL == 0) {
-					colSL = 4;
+					colSL = codingTable.length - 1;
 				} else {
 					colSL--;
 				}
 				newText = addText(rowFL, colFL, rowSL, colSL, newText, codingTable);
 			} else if (colFL == colSL) {
 				if (rowFL == 0) {
-					rowFL = 4;
+					rowFL = codingTable.length - 1;
 				} else {
 					rowFL--;
 				}
 				if (rowSL == 0) {
-					rowSL = 4;
+					rowSL = codingTable.length - 1;
 				} else {
 					rowSL--;
 				}
