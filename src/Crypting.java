@@ -1,5 +1,7 @@
-
+package OOP2;
 public class Crypting {
+
+	private static final int MIN_VALUE = -1;
 
 	public static void main(String[] args) {
 		String text = "atextmextpevoqakbvccso";
@@ -20,7 +22,7 @@ public class Crypting {
 		for (int i = 0; i < text.length(); i += 2) {
 			char firstLetter = text.charAt(i);
 			char secondLetter = text.charAt(i + 1);
-			int rowFL = -1, colFL = -1, rowSL = -1, colSL = -1;
+			int rowFL = MIN_VALUE, colFL = MIN_VALUE, rowSL = MIN_VALUE, colSL = MIN_VALUE;
 			for (int j = 0; j < codingTable.length; j++) {
 				for (int k = 0; k < codingTable.length; k++) {
 					if (codingTable[j][k] == firstLetter) {
@@ -69,7 +71,7 @@ public class Crypting {
 		for (int i = 0; i < text.length(); i += 2) {
 			char firstLetter = text.charAt(i);
 			char secondLetter = text.charAt(i + 1);
-			int rowFL = -1, colFL = -1, rowSL = -1, colSL = -1;
+			int rowFL = MIN_VALUE, colFL = MIN_VALUE, rowSL = MIN_VALUE, colSL = MIN_VALUE;
 			for (int j = 0; j < codingTable.length; j++) {
 				for (int k = 0; k < codingTable.length; k++) {
 					if (codingTable[j][k] == firstLetter) {
@@ -123,3 +125,4 @@ public class Crypting {
 		return newText;
 	}
 }
+
