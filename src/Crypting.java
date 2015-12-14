@@ -1,4 +1,4 @@
-package OOP2;
+
 public class Crypting {
 
 	private static final int MIN_VALUE = -1;
